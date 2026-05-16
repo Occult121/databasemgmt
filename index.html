@@ -1,0 +1,164 @@
+<html> 
+<head> 
+</head> 
+
+<body> 
+<br><marquee behavior ="scroll" direction ="up"><font size ="60"> DBMS </font></marquee><br><br> 
+<h2> 
+<nav> 
+<a href="C:\Users\Admin\Downloads\dplyrtc.html#lossless"> loss -less join decomposition </a>|
+<a href="C:\Users\Admin\Downloads\dplyrtc.html#independence"> DATA - INDEPENDENCE</a>| 
+<a href="C:\Users\Admin\Downloads\dplyrtc.html#existent"> EXISTENCE DEPENDENCIES </a>| 
+<a href="C:\Users\Admin\Downloads\dplyrtc.html#functional"> FUNCTIONAL DEPENDENCIES </a>| 
+<a href="C:\Users\Admin\Downloads\dplyrtc.html#normalize"> NORMALIZATION </a>| 
+ 
+<a href="C:\Users\Admin\Downloads\dplyrtc.html#checks"> DATABASE - RECOVERY </a>|
+<a href="C:\Users\Admin\Downloads\dplyrtc.html#acid"> TRANSACTIONS </a>|
+<a href="C:\Users\Admin\Downloads\dplyrtc.html#sql"> SQL - COMMANDS </a>
+
+</nav> 
+</h2> 
+<br><br> 
+<section id ="lossless" style ="background-color: LightGreen"> 
+<h2><a target="_blank" href ="#loss less join decomposition">loss less join decomposition</a></h2><br> 
+we have 2 rel. schemas r1 and r2 s.t  for all atributes in r1 and r2 we have r1   u   rf2 ---->r1   and r1   u  r2 ---->r2 holding good <br> 
+dependency preservation occurs herein <br> 
+<a target="_blank" href="https://www.scaler.com/topics/lossless-join-decomposition-in-dbms/"><img src="https://www.scaler.com/topics/images/lossless-join-decomposition-in-dbms-thumbnail.webp" alt ="h" width ="350" height ="350"></a> 
+<br><br></section> 
+<br><br> 
+<section id ="independence" style ="background-color :white"> 
+<h2><a target="_blank" href="#DATA INDEPENDENCE"> DATA INDEPENDENCE </a></h2><br> 
+ability to modify schema defn. in one level without affecting schema defn. in next higher level of database <br> 
+foll. from data abstraction, atribute inheritance and polymorphism <br> 
+<table width ="60%" border ="1"> 
+<thead> 
+<tr><th> physical data independence </th>
+<th> logical data independence</th></tr></thead> 
+
+<tbody> 
+<tr><td> ability to modify physical schema without causing application programs to be rewritten </td> 
+<td> ability to modify logical schema without causing aplication programs to be rewritten </td></tr> 
+
+<tr> 
+<td colspan ="2"> logical data independence is more difficult to achieve as aplication programs are dependent on logical structure of data they access 
+</td></tr> 
+</tbody> 
+</table> 
+
+<img src="https://d8it4huxumps7.cloudfront.net/uploads/images/650d89295b976_data_independence_in_dbms_01.jpg?d=2000x2000" alt="h" width ="250" height ="250"> 
+<br><br> 
+</section> 
+<br><br> 
+
+<section id="existent" style ="background-color: blue"> 
+<font color ="white"> 
+<h2><a target="_blank" href="#EXISTENCE DEPENDENCIES"> EXISTENCE DEPENDENCIES </a></h2><br> 
+we have a rel. schema r where the functional dependency is x --->y s.t  if operationally y is deleted <br>
+so is x. y is dominant entity and x is subordinate entity , dependency preservation occurs herein <br> 
+</font> 
+<br><br> 
+<img src="https://ashutoshtripathi.com/wp-content/uploads/2017/11/fd.png" alt ="h" width ="350" height="350"> 
+<br></section> 
+<br><br> 
+<section id ="functional" style ="background-color : pink"> 
+<h2><a target="_blank" href="#FUNCTIONAL DEPENDENCIES"> FUNCTIONAL DEPENDENCIES </a></h2><br> 
+<ol type="a"><li> 	Full functional dependency ---- all non – key attributes are wholly dependent on  the key attribute </li>
+<li>
+	Partial functional dependency ---- some non –key attributes are dependent on the key attribute and remaining non –key attributes are<br> 
+ dependent on the key attribute and on some other non –key attributes </li> 
+<li> 
+	Transitive dependency ----- attributes In the key col. Of one rel. correspond to the key attributes in col. Of another rel. </li><li> 
+	Multi – valued dependency ---- in 4NF </li> 
+<li> 
+	Join dependency --- in 5NF </li></ol> 
+<br><br> 
+</section> 
+
+
+<br><br> 
+<section id ="normalize" style ="background-color :green"> 
+<font color ="white"> 
+<h2><a target="_blank" href="#NORMALIZATION"> NORMALIZATION </a></h2><br> 
+
+The removal of data redundancy from tables or rels. Is called as normalization <br> 
+While 1nf has redundant data that is eliminated to some extent in 2nf<br> 
+Still higher nf is BCNF  that defines super key values . all rel. schemas in 3NF  are in  BCNF   but the reverse is not always holding true .<br> there ‘s a rel. schema r where for all functional dependencies  f on r , can find a <--- - r and b <---  r s.t a ---> b is a trivial<br> 
+ dependency in f+ , s.t at least one of foll. Is true : <br>
+a ----> b is a trivial dependency in r<br> 
+a is a super key to r <br> 
+still higher nf is 3NF that defines candidate key values , hence transitive dependencies . there ‘s a rel. schema r where for all functional dependencies <br> 
+ f on r , can find a < - r and b < - r s.t a -> b is a trivial dependency in f+ , s.t at least one of foll. Is true : <br>
+a --b is a trivial dependency in r <br>
+a is a super key to r<br> 
+can find extraneous attribute in [b-a], that is contained in a candidate key value for r <br><br> 
+
+4NF  defines multi – valued dependencies<br> 
+5NF  defines join dependencies <br></font> 
+<br><br> 
+<a target="_blank" href="https://www.analyticsvidhya.com/blog/2022/08/database-normalization-a-step-by-step-guide-with-examples/"><img src="https://editor.analyticsvidhya.com/uploads/34025Blank%20board%20(6).jpeg" alt="h"  width="350" height ="350"></a> 
+<br> 
+</section>
+<br><br> 
+
+<section id ="checks" style ="background-color :black"> 
+<font color ="white">
+<h2><a target="_blank" href="#check -pt method of log recovery"> check -pt method of log recovery</a></h2><br> 
+Where a database is to be recovered from hd crash we use check pt method of log recovery .<br> 
+ a check pt is a special log record , the main stages in this recovery using check –pts as : <br> 
+Output onto stable storage all log records residing In main memory<br>  
+Output all modified buffer blocks onto disk <br> 
+output onto stable storage a log record check –pt<br>  
+No database modifications can take place where a check –pt in progress <br><br> 
+we now suppose that a hd crash occurs where a transaction executing , the log is consulted backwds<br>  till finds the transaction –commit , log is still<br> 
+ consulted backwds till finds the check –pt , log is still consulted backwds till finds transaction – start , that identifies the transaction.<br> 
+ Now , undo /redo operations can be performed on this transaction and any others . <u>for concurrent transactions processing , fuzzy check –pt is used </u> 
+</font> 
+<br><br></section> 
+<br><br> 
+<section id="acid" style ="background-color :yellow"> 
+<h2><a target="_blank" href="#Acid properties of transaction"> Acid properties of transaction </a></h2> 
+<br> 
+A transaction is a unit of program execution that accesses and –or possibly updates various data items . Acid properties of a transaction are :<br> 
+<table width ="60%" border ="1"> 
+<tr><td>  
+Atomicity --- either transaction executes in entirety or none executes at all </td></tr> 
+<tr><td> 
+Consistency ---- state of database remains same both before & after transaction , despite system changes </td></tr> 
+<tr><td> 
+Isolation --- despite concurrent execution of transactions , each transaction proceeds independently of others , despite system changes </td></tr> 
+<tr><td> 
+Durability ----- any modifications made to database as a result of transaction , persist even if there are system changes </td></tr></table> 
+<br> 
+
+ 
+e.gs there is a schedule involving 2 accts a and b, initial values in   a and b accts are $ 1000 and $ 2000 .<br> 
+ a transaction occurs that transfers $ 50 from a to b , as a result of which , final values in a and b accts become $950 and $ 2050; clearly<br> 
+ a consistent state as sum a +b is preserved both before & after the transaction . we now<br> 
+ suppose that a hd crash occurs after write – a committed but before write –b committed , so ,<br> 
+ now , final values in   a and b becomes $ 950 and $ 2000 , clearly an inconsistent state , as sum a +b is no more<br> 
+ preserved both before and after the transaction.even if system failure did not occurs and transaction proceeded to completion,<br> 
+ this inconsistent state would not have been visible except during occurrence of transaction. <br> 
+This again reflects atomicity , isolation gets preserved , durability gets preserved through recovery mgmt.  component of transactions<br><br> 
+</section> 
+<br><br> 
+ 
+<section id ="sql" style ="background-color : white"> 
+<h2><a target ="_blank" href="#SQL COMMANDS"> SQL COMMANDS </a></h2><br> 
+<ol type ="a"> 
+<li> DDL COMMANDS / DATA DEFN LANGUAGE :  examples include CREATE , UPDATE , DROP  etc </li> 
+<li> DML  or DATA MANIPULATION LANGUAGE COMMANDS :  can be of examples : INSERT , DELETE , SELECT  etc </li> 
+<li> DATA CONTROL LANGUAGE or DCL COMMANDS : examples include GRANT , REVOKE  etc </li> 
+</ol> 
+<br><br></section> 
+<br><br> 
+<footer> 
+<h2><a target="_blank" href="mailTo:ratulxx@gmail.com"> ratulxx@gmail.com</a></h2> 
+<br></footer> 
+<br></body> 
+</html> 
+ 
+
+
+
+
+  
